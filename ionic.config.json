@@ -1,5 +1,10 @@
 {
   "name": "axis",
   "app_id": "",
-  "type": "ionic1"
+  "type": "ionic1",
+  "watchPatterns": [],
+  "integrations": {
+    "gulp": {},
+    "cordova": {}
+  }
 }
