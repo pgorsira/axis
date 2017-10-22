@@ -1,31 +1,25 @@
 <ion-view view-title="My Software">
   <ion-content>
-    <!--ks-swiper-container initial-slide="3" speed="2000" loop="true" show-nav-buttons="false" slides-per-view="3" space-between="5"
-                         pagination-clickable="false"
-                         override-parameters="{effect: 'coverflow',coverflow: {rotate: 50,stretch: 0,depth: 100,modifier: 1,slideShadows : false}}"
-                         swiper="swiper" on-ready="onReadySwiper(swiper)">
-      <ks-swiper-slide class="swiper-slide" ng-repeat="installed_app in installed_apps">
-        <img ng-src="img/{{installed_app.id}}.png" width="100%"  class="popped">
-      </ks-swiper-slide>
-    </ks-swiper-container-->
+
     <div class="list">
 
 
-      <a class="item item-thumbnail-left item-button-right" href="#" ng-repeat="installed_app in installed_apps">
+      <a class="item item-thumbnail-left item-button-right"  ng-repeat="installed_app in installed_apps">
         <img ng-src="img/{{installed_app.id}}.png" width="100%" style="    border-radius: 10px;">
         <h2><b>{{ installed_app.title }}</b></h2>
         <p>{{ installed_app.company }}</p>
-        <button class="button  button-balanced" style="background-color:transparent; color:#e42112;top:30px;">
+        <button class="button  button-balanced" style="background-color:transparent; color:#e42112;top:30px;"
+                ng-click="showConfirm(installed_app.title, 978.13)">
           <i class="icon ion-ios-close-outline"></i>
         </button>
 
       </a>
 
-      <a class="item item-thumbnail-left item-button-right unpopped" href="#"  ng-class="{ 'popped': showNewApp}">
+      <a class="item item-thumbnail-left item-button-right unpopped" ng-class="{ 'popped': showNewApp}">
         <img ng-src="img/{{new_app.id}}.png" width="100%" style="    border-radius: 10px;">
         <h2><b>{{ new_app.title }}</b></h2>
         <p>{{ new_app.company }}</p>
-        <button class="button  button-balanced" style="background-color:transparent; color:#e42112;top:30px;">
+        <button class="button  button-balanced" style="background-color:transparent; color:#e42112;top:30px;" ng-click="showConfirm(new_app.title, order.price)">
           <i class="icon ion-ios-close-outline"></i>
         </button>
 

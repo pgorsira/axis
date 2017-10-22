@@ -11,7 +11,7 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('InstalledCtrl', function($scope, AppService, $timeout) {
+.controller('InstalledCtrl', function($scope, AppService, $timeout, $ionicLoading, $ionicPopup, $http) {
   console.log("InstalledCtrl");
   $scope.installed_apps = [
     { title: 'QuickBooks', id: "QuickBooks-Icon", company: "Intuit, Inc." },
@@ -28,6 +28,58 @@ angular.module('starter.controllers', [])
   $timeout(function(){
     $scope.showNewApp = true;
   }, 1500);
+
+  $scope.showAlert = function() {
+    var alertPopup = $ionicPopup.alert({
+      title: 'Success',
+      template: 'The transaction was processed successfully:<br><br>761f2f64c352ee279481d570310cb214ec30eae251ea65252ac4d740cffb6cd3.'
+    });
+
+    alertPopup.then(function(res) {
+      $scope.installed_apps = [
+        { title: 'QuickBooks', id: "QuickBooks-Icon", company: "Intuit, Inc." },
+        { title: 'TurboTax Professional', id: "TurboTax_Logo", company:"Intuit, Inc." },
+      ];
+      console.log('Thank you for not eating my delicious ice cream cone');
+    });
+  };
+
+
+  // A confirm dialog
+  $scope.showConfirm = function(software, cost) {
+
+    var confirmPopup = $ionicPopup.confirm({
+      title: 'Confirm Sell',
+      template: 'Are you sure you want to sell a ' + software + ' license for $' + cost + '?'
+    });
+
+    confirmPopup.then(function(res) {
+      if(res) {
+        console.log('You are sure');
+        $ionicLoading.show({
+          noBackdrop: true,
+          //template: '<i class="icon ion-loading-c" style="color:white; font-size: 2em"></i>',
+        });
+
+        var request = $http.post('http://10.101.2.193/');
+        request.success(function (data, status, headers, config) {
+          console.log("INFO", "OK");
+        }).error(function (data, status, headers, config) {
+          console.log("ERROR");
+        });
+
+        $timeout(function(){
+          AppService.showNewApp = true;
+          $ionicLoading.hide();
+          $scope.showAlert();
+        }, 1000);
+
+      } else {
+        console.log('You are not sure');
+      }
+    });
+  };
+
 
 })
 
