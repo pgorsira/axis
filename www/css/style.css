@@ -72,8 +72,23 @@
   100% { opacity: 1; transform: scale(1); }
 }
 
+.spinner-ios{
+  stroke: white !important;
+}
+
+.unpopped{
+  display:none;
+}
+
 .popped{
+  display:block !important;
   -webkit-animation:pop-in 0.5s;
   -moz-animation:pop-in 0.5s;
   -ms-animation:pop-in 0.5s;
+}
+
+.card{
+  margin:0;
+  margin-top:1px;
+
 }

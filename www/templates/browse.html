@@ -31,7 +31,7 @@
 
     <ion-scroll delegate-handle="horizontal" horizontal-scroll-fix="mainScroll" direction="x" class="wide-as-needed" scrollbar-x="false" style="padding-left:20px;    padding-top: 10px;">
       <div style=" padding-bottom: 20px">
-      <div style="display:inline-block;margin-right:20px;width:90px;vertical-align: top;" ng-repeat="app in row1_apps" >
+      <div style="display:inline-block;margin-right:20px;width:90px;vertical-align: top;" ng-repeat="app in row1_apps" ng-click="goToOrders()">
         <img ng-src="img/{{app.id}}.png" width="100%" style="border-radius: 10px;width:90px;margin-top:10px;margin-bottom: 5px;">
         <span style="display:block;
     width: 90px;

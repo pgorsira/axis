@@ -11,18 +11,26 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('InstalledCtrl', function($scope, AppService) {
+.controller('InstalledCtrl', function($scope, AppService, $timeout) {
   console.log("InstalledCtrl");
   $scope.installed_apps = [
-    { title: 'Overwatch', id: 1 },
+    { title: 'Overwatch', id: 18 },
     { title: 'Microsoft Office 2011', id: 2 },
     { title: 'Final Cut Pro', id: 3 },
   ];
 
-  $scope.showNewApp = AppService.showNewApp;
+  $scope.new_app = {
+    title:'Photoshop CS4',
+    id: "cs4"
+  };
+
+  $timeout(function(){
+    $scope.showNewApp = true;
+  }, 1500);
+
 })
 
-  .controller('BrowseCtrl', function($scope, $ionicScrollDelegate, $timeout) {
+  .controller('BrowseCtrl', function($scope, $ionicScrollDelegate, $timeout, $state) {
     $timeout(function(){
       //return false; // <--- comment this to "fix" the problem
       var sv = $ionicScrollDelegate.$getByHandle('horizontal').getScrollView();
@@ -249,11 +257,14 @@ angular.module('starter.controllers', [])
 
     ];
 
+    $scope.goToOrders = function(){
+      $state.go('app.orders');
+    }
 
   })
 
 
-  .controller('OrdersCtrl', function($scope, $stateParams, $ionicPopup, $state, $ionicLoading, $timeout, $http, AppService) {
+  .controller('OrdersCtrl', function($scope, $stateParams, $ionicPopup, $state, $ionicLoading, $timeout, $http, AppService, $ionicHistory) {
     $scope.orders = [
       {
         title: 'Photoshop CS4',
@@ -297,17 +308,32 @@ angular.module('starter.controllers', [])
         license: "Personal",
         id:"cs6",
         company:"Adobe"
+      },
+      {
+        title: 'Photoshop CS6',
+        os: 'macOS',
+        version: '13.0',
+        date: 'Oct 15, 2005',
+        price: 702.96,
+        license: "Commercial",
+        id:"cs6",
+        company:"Adobe"
       }
+
 
     ];
 
     $scope.showAlert = function() {
       var alertPopup = $ionicPopup.alert({
         title: 'Success',
-        template: 'The transaction () was processed successfully.'
+        template: 'The transaction was processed successfully:<br><br>e9629ec5800743732f3d01e3b5fc36f773dbc64ddca5b226a3e48b61bd53565e.'
       });
 
       alertPopup.then(function(res) {
+        $ionicHistory.nextViewOptions({
+          historyRoot: true,
+          disableBack: true
+        });
         $state.go('app.installed');
         console.log('Thank you for not eating my delicious ice cream cone');
       });
