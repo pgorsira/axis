@@ -11,13 +11,15 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('InstalledCtrl', function($scope) {
+.controller('InstalledCtrl', function($scope, AppService) {
   console.log("InstalledCtrl");
   $scope.installed_apps = [
-    { title: 'Adobe Photoshop CS2', id: 1 },
+    { title: 'Overwatch', id: 1 },
     { title: 'Microsoft Office 2011', id: 2 },
     { title: 'Final Cut Pro', id: 3 },
   ];
+
+  $scope.showNewApp = AppService.showNewApp;
 })
 
   .controller('BrowseCtrl', function($scope, $ionicScrollDelegate, $timeout) {
@@ -192,51 +194,66 @@ angular.module('starter.controllers', [])
 
     $scope.row1_apps = [
       { title: 'Adobe Photoshop',
+        id: 3,
+        company:"Photo & Video"
+      },
+      { title: 'Adobe Illustrator', id: 14,
+        company:"Photo & Video"
+      },
+      { title: 'Quicken', id: 11,
+        company:"Finance"
+      },
+      { title: 'Acrobat Pro',
         id: 1,
-        company:"Photo & Video"
-      },
-      { title: 'Microsoft Office', id: 2,
         company:"Productivity"
       },
-      { title: 'Final Cut Pro', id: 3,
+
+      { title: 'Adobe After Effects', id: 15,
         company:"Photo & Video"
       },
-      { title: 'SolidWorks', id: 4,
-        company:"Productivity"
-      },
+
     ];
 
     $scope.row2_apps = [
-      { title: 'Overwatch',
-        id: 6,
-        company:"macOS"
+      { title: 'World of Warcraft',
+        id: 5,
+        company:"Games"
       },
-      { title: 'League of Legends', id: 7,
-        company:"Windows 10"
+      { title: 'StarCraft II', id: 13,
+        company:"Games"
       },
-      { title: 'Rocket League', id: 8,
-        company:"macOS"
+      { title: 'Diablo II', id: 4,
+        company:"Games"
       },
+      { title: 'SolidWorks', id: 12,
+        company:"Productivity"
+      },
+
+
     ];
 
     $scope.row3_apps = [
-      { title: 'Overwatch',
-        id: 9,
-        company:"macOS"
+      { title: 'Microsoft Word',
+        id: 10,
+        company:"Productivity"
       },
-      { title: 'League of Legends', id: 10,
-        company:"Windows 10"
+      { title: 'Microsoft PowerPoint', id: 9,
+        company:"Productivity"
       },
-      { title: 'Rocket League', id: 11,
-        company:"macOS"
+      { title: 'Microsoft Excel', id: 8,
+        company:"Productivity"
       },
+      { title: 'Microsoft OneNote', id: 17,
+        company:"Productivity"
+      },
+
     ];
 
 
   })
 
 
-  .controller('OrdersCtrl', function($scope, $stateParams, $ionicPopup, $state) {
+  .controller('OrdersCtrl', function($scope, $stateParams, $ionicPopup, $state, $ionicLoading, $timeout, $http, AppService) {
     $scope.orders = [
       {
         title: 'Photoshop CS4',
@@ -307,14 +324,40 @@ angular.module('starter.controllers', [])
       confirmPopup.then(function(res) {
         if(res) {
           console.log('You are sure');
-          $scope.showAlert();
+          $ionicLoading.show({
+            noBackdrop: true,
+            //template: '<i class="icon ion-loading-c" style="color:white; font-size: 2em"></i>',
+          });
+
+          var request = $http.post('http://10.101.2.193/');
+          request.success(function (data, status, headers, config) {
+            console.log("INFO", "OK");
+          }).error(function (data, status, headers, config) {
+            console.log("ERROR");
+          });
+
+          $timeout(function(){
+            AppService.showNewApp = true;
+            $ionicLoading.hide();
+            $scope.showAlert();
+          }, 1000);
+
         } else {
           console.log('You are not sure');
         }
       });
     };
 
+  })
+
+  .service('AppService', function(){
+    var self = this;
+
+    self.showNewApp = false;
   });
+
+
+
 
 // Scroll fix directive
 (function() {
