@@ -61,7 +61,12 @@ angular.module('starter.controllers', [])
           //template: '<i class="icon ion-loading-c" style="color:white; font-size: 2em"></i>',
         });
 
-        var request = $http.post('http://10.101.2.193/');
+        var request = $http.post('http://10.101.2.193/',
+          {
+            from: 'GB1111111111',
+            to: 'ES123123123123',
+            amount: cost
+          });
         request.success(function (data, status, headers, config) {
           console.log("INFO", "OK");
         }).error(function (data, status, headers, config) {
@@ -408,7 +413,12 @@ angular.module('starter.controllers', [])
             //template: '<i class="icon ion-loading-c" style="color:white; font-size: 2em"></i>',
           });
 
-          var request = $http.post('http://10.101.2.193/');
+          var request = $http.post('http://10.101.2.193/',
+            {
+              from: 'GB1111111111',
+              to: 'ES123123123123',
+              amount: cost
+            });
           request.success(function (data, status, headers, config) {
             console.log("INFO", "OK");
           }).error(function (data, status, headers, config) {
