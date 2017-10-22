@@ -92,3 +92,12 @@
   margin-top:1px;
 
 }
+
+
+i.ion-ios-close-outline::before, i.ion-ios-plus-outline::before {
+  font-size: 90px;
+}
+
+.button.activated{
+  border:0 !important;
+}

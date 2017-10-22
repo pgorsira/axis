@@ -14,14 +14,15 @@ angular.module('starter.controllers', [])
 .controller('InstalledCtrl', function($scope, AppService, $timeout) {
   console.log("InstalledCtrl");
   $scope.installed_apps = [
-    { title: 'Overwatch', id: 18 },
-    { title: 'Microsoft Office 2011', id: 2 },
-    { title: 'Final Cut Pro', id: 3 },
+    { title: 'QuickBooks', id: "QuickBooks-Icon", company: "Intuit, Inc." },
+    { title: 'Hearthstone', id: "hearthstone", company: "Blizzard, Inc." },
+    { title: 'TurboTax Professional', id: "TurboTax_Logo", company:"Intuit, Inc." },
   ];
 
   $scope.new_app = {
     title:'Photoshop CS4',
-    id: "cs4"
+    id: "cs4",
+    company: "Adobe, Inc."
   };
 
   $timeout(function(){
