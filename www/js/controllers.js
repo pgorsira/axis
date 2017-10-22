@@ -22,7 +22,7 @@ angular.module('starter.controllers', [])
 
   .controller('BrowseCtrl', function($scope) {
     $scope.row1_apps = [
-      { title: 'Adobe Photoshop CS2',
+      { title: 'Adobe Photoshop',
         id: 1,
         platform:"macOS"
       },
@@ -32,7 +32,24 @@ angular.module('starter.controllers', [])
       { title: 'Final Cut Pro', id: 3,
         platform:"macOS"
       },
+      { title: 'SolidWorks', id: 4,
+        platform:"macOS"
+      },
     ];
+
+    $scope.row2_apps = [
+      { title: 'Overwatch',
+        id: 1,
+        platform:"macOS"
+      },
+      { title: 'League of Legends', id: 2,
+        platform:"Windows 10"
+      },
+      { title: 'Rocket League', id: 3,
+        platform:"macOS"
+      },
+    ];
+
   })
 
 
