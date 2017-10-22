@@ -1,43 +1,89 @@
 <ion-view view-title="Browse">
   <ion-content>
 
-    <div style="">
-    <div class="item item-image">
+    <div style="margin-top:20px;">
+    <!--div class="item item-image">
       <img src="cover.jpg">
-    </div>
+    </div-->
 
 
       <div><h3 style="margin-left:20px;display:inline;">Productivity</h3>
       </div>
 
     <ion-scroll direction="x" class="wide-as-needed" scrollbar-x="false" style="padding-left:20px;    padding-top: 10px;">
+      <div style=" padding-bottom: 20px">
       <div style="display:inline-block;margin-right:20px;width:90px;vertical-align: top;" ng-repeat="app in row1_apps" >
         <img ng-src="img/{{app.id}}.png" width="100%" style="border-radius: 10px;width:90px;margin-top:10px;margin-bottom: 5px;">
         <span style="display:block;
-    width: 80px;
+    width: 90px;
     overflow-wrap: break-word;
     word-wrap: normal;    font-size: 10pt;
     white-space: normal;">{{ app.title }}</span>
         <span style="display:block;    font-size: 10pt;color:gray;
 ">{{ app.platform }}</span>
       </div>
-
-
-
-    </ion-scroll>
-
-<h1>Games</h1>
-
-    <ion-scroll direction="x" class="wide-as-needed" scrollbar-x="false">
-      <div style="display:inline-block;padding:10px;" ng-repeat="app in row2_apps" >
-        <img ng-src="img/{{app.id}}.png" width="100%">
-        <span style="display:block;">{{ app.title }}</span>
-        <span style="display:block;">{{ app.platform }}</span>
       </div>
 
 
-
     </ion-scroll>
+
+      <hr style="     background-color: lightgray;
+    margin-left: 20px;
+    margin-bottom: 25px;
+    border: none;
+    height: 1px;">
+
+      <div><h3 style="margin-left:20px;display:inline;">Productivity</h3>
+      </div>
+
+      <ion-scroll direction="x" class="wide-as-needed" scrollbar-x="false" style="padding-left:20px;    padding-top: 10px;">
+        <div style=" padding-bottom: 20px">
+          <div style="display:inline-block;margin-right:20px;width:90px;vertical-align: top;" ng-repeat="app in row1_apps" >
+            <img ng-src="img/{{app.id}}.png" width="100%" style="border-radius: 10px;width:90px;margin-top:10px;margin-bottom: 5px;">
+            <span style="display:block;
+    width: 90px;
+    overflow-wrap: break-word;
+    word-wrap: normal;    font-size: 10pt;
+    white-space: normal;">{{ app.title }}</span>
+            <span style="display:block;    font-size: 10pt;color:gray;
+">{{ app.platform }}</span>
+          </div>
+        </div>
+
+
+      </ion-scroll>
+
+      <hr style="     background-color: lightgray;
+    margin-left: 20px;
+    margin-bottom: 25px;
+    border: none;
+    height: 1px;">
+
+      <div><h3 style="margin-left:20px;display:inline;">Productivity</h3>
+      </div>
+
+      <ion-scroll direction="x" class="wide-as-needed" scrollbar-x="false" style="padding-left:20px;    padding-top: 10px;">
+        <div style=" padding-bottom: 20px">
+          <div style="display:inline-block;margin-right:20px;width:90px;vertical-align: top;" ng-repeat="app in row1_apps" >
+            <img ng-src="img/{{app.id}}.png" width="100%" style="border-radius: 10px;width:90px;margin-top:10px;margin-bottom: 5px;">
+            <span style="display:block;
+    width: 90px;
+    overflow-wrap: break-word;
+    word-wrap: normal;    font-size: 10pt;
+    white-space: normal;">{{ app.title }}</span>
+            <span style="display:block;    font-size: 10pt;color:gray;
+">{{ app.platform }}</span>
+          </div>
+        </div>
+
+
+      </ion-scroll>
+
+      <hr style="     background-color: lightgray;
+    margin-left: 20px;
+    margin-bottom: 25px;
+    border: none;
+    height: 1px;">
 
     </div>
   </ion-content>

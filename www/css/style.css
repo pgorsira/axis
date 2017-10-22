@@ -6,3 +6,14 @@
 .scroll {
   min-width: 100%;
 }
+
+
+.swiper-slide img{
+  border-radius: 10px;
+}
+
+.item-avatar > img{
+  border-radius:10px !important;
+  /*max-height:64px !important;*/
+  /*max-width:64px !important;*/
+}

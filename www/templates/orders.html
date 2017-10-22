@@ -1,5 +1,35 @@
-<ion-view view-title="Playlist">
+<ion-view view-title="Orders">
   <ion-content>
-    <h1>Playlist</h1>
+
+    <div class="list card" ng-repeat="order in orders">
+
+      <div class="item item-avatar">
+        <img ng-src="img/{{order.id}}.png" >
+        <h2>{{ order.title }}</h2>
+        <p>${{ order.price }}</p>
+      </div>
+
+      <div class="item item-body">
+        <!--img class="full-image" src="delorean.jpg">
+        <p>
+          This is a "Facebook" styled Card. The header is created from a Thumbnail List item,
+          the content is from a card-body consisting of an image and paragraph text. The footer
+          consists of tabs, icons aligned left, within the card-footer.
+        </p-->
+        <p style="margin-top:0;    display: flex;
+    justify-content: space-between;">
+          <a href="#" class="subdued" style="display:inline-block;margin-right:10px;">Platform<br>
+            <span style="font-weight: 500; color:black;">{{ order.os }}</span></a>
+          <a href="#" class="subdued" style="display:inline-block;margin-right:10px;">Version<br>
+            <span style="font-weight: 500; color:black;">{{ order.version }}</span></a>
+          <a href="#" class="subdued" style="display:inline-block;margin-right:10px;">Release Date<br>
+            <span style="font-weight: 500; color:black;">{{ order.date }}</span></a>
+
+        </p>
+      </div>
+
+    </div>
+
+
   </ion-content>
 </ion-view>

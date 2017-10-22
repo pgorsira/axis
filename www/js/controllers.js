@@ -26,7 +26,7 @@ angular.module('starter.controllers', [])
         id: 1,
         platform:"macOS"
       },
-      { title: 'Microsoft Office 2011', id: 2,
+      { title: 'Microsoft Office', id: 2,
         platform:"Windows 10"
       },
       { title: 'Final Cut Pro', id: 3,
@@ -54,4 +54,14 @@ angular.module('starter.controllers', [])
 
 
   .controller('OrdersCtrl', function($scope, $stateParams) {
+    $scope.orders = [
+      {
+        title: 'Photoshop CS2',
+        os: 'macOS',
+        version: 'CS2',
+        date: 'Oct 15, 2005',
+        price: 200,
+        id:1
+      }
+    ];
 });
