@@ -236,7 +236,7 @@ angular.module('starter.controllers', [])
   })
 
 
-  .controller('OrdersCtrl', function($scope, $stateParams) {
+  .controller('OrdersCtrl', function($scope, $stateParams, $ionicPopup, $state) {
     $scope.orders = [
       {
         title: 'Photoshop CS4',
@@ -283,7 +283,38 @@ angular.module('starter.controllers', [])
       }
 
     ];
-});
+
+    $scope.showAlert = function() {
+      var alertPopup = $ionicPopup.alert({
+        title: 'Success',
+        template: 'The transaction () was processed successfully.'
+      });
+
+      alertPopup.then(function(res) {
+        $state.go('app.installed');
+        console.log('Thank you for not eating my delicious ice cream cone');
+      });
+    };
+
+
+    // A confirm dialog
+    $scope.showConfirm = function(software, cost) {
+      var confirmPopup = $ionicPopup.confirm({
+        title: 'Confirm Purchase',
+        template: 'Are you sure you want to purchase a ' + software + ' license for $' + cost + '?'
+      });
+
+      confirmPopup.then(function(res) {
+        if(res) {
+          console.log('You are sure');
+          $scope.showAlert();
+        } else {
+          console.log('You are not sure');
+        }
+      });
+    };
+
+  });
 
 // Scroll fix directive
 (function() {
@@ -356,6 +387,6 @@ angular.module('starter.controllers', [])
 
   })();
 
-  angular.module('ionicApp').directive('horizontalScrollFix', ['$timeout', '$ionicScrollDelegate', HorizontalScrollFix]);
+  angular.module('starter').directive('horizontalScrollFix', ['$timeout', '$ionicScrollDelegate', HorizontalScrollFix]);
 
 }).call(this);
