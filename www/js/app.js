@@ -49,7 +49,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
     })
-    .state('app.playlists', {
+    .state('app.playlists', {  // My Software
       url: '/playlists',
       views: {
         'menuContent': {
