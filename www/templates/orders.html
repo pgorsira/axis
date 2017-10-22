@@ -1,12 +1,29 @@
 <ion-view view-title="Orders">
   <ion-content>
 
+    <style>
+      .item h2 {
+        font-weight: bold;
+      }
+
+
+    </style>
     <div class="list card" ng-repeat="order in orders">
 
       <div class="item item-avatar">
         <img ng-src="img/{{order.id}}.png" >
         <h2>{{ order.title }}</h2>
-        <p>${{ order.price }}</p>
+        <p>{{ order.company }}</p>
+        <button style="position: absolute;
+    top: 16px;
+    right: 16px;
+    max-width: 100px;
+    max-height: 40px;
+    width: 100%;
+    height: 100%;" class="button button-outline button-positive">
+          BUY
+        </button>
+
       </div>
 
       <div class="item item-body">
@@ -22,8 +39,10 @@
             <span style="font-weight: 500; color:black;">{{ order.os }}</span></a>
           <a href="#" class="subdued" style="display:inline-block;margin-right:10px;">Version<br>
             <span style="font-weight: 500; color:black;">{{ order.version }}</span></a>
-          <a href="#" class="subdued" style="display:inline-block;margin-right:10px;">Release Date<br>
-            <span style="font-weight: 500; color:black;">{{ order.date }}</span></a>
+          <a href="#" class="subdued" style="display:inline-block;margin-right:10px;">License<br>
+            <span style="font-weight: 500; color:black;">{{ order.license }}</span></a>
+          <a href="#" class="subdued" style="display:inline-block;margin-right:10px;">Price<br>
+            <span style="font-weight: bold; color:#4fb91d;">${{ order.price }}</span></a>
 
         </p>
       </div>

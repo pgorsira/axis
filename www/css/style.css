@@ -13,7 +13,7 @@
 }
 
 .item-avatar > img{
-  border-radius:10px !important;
+  border-radius:0px !important;
   /*max-height:64px !important;*/
   /*max-width:64px !important;*/
 }

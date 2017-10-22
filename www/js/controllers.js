@@ -193,42 +193,42 @@ angular.module('starter.controllers', [])
     $scope.row1_apps = [
       { title: 'Adobe Photoshop',
         id: 1,
-        platform:"macOS"
+        company:"Photo & Video"
       },
       { title: 'Microsoft Office', id: 2,
-        platform:"Windows 10"
+        company:"Productivity"
       },
       { title: 'Final Cut Pro', id: 3,
-        platform:"macOS"
+        company:"Photo & Video"
       },
       { title: 'SolidWorks', id: 4,
-        platform:"macOS"
+        company:"Productivity"
       },
     ];
 
     $scope.row2_apps = [
       { title: 'Overwatch',
         id: 6,
-        platform:"macOS"
+        company:"macOS"
       },
       { title: 'League of Legends', id: 7,
-        platform:"Windows 10"
+        company:"Windows 10"
       },
       { title: 'Rocket League', id: 8,
-        platform:"macOS"
+        company:"macOS"
       },
     ];
 
     $scope.row3_apps = [
       { title: 'Overwatch',
         id: 9,
-        platform:"macOS"
+        company:"macOS"
       },
       { title: 'League of Legends', id: 10,
-        platform:"Windows 10"
+        company:"Windows 10"
       },
       { title: 'Rocket League', id: 11,
-        platform:"macOS"
+        company:"macOS"
       },
     ];
 
@@ -239,13 +239,49 @@ angular.module('starter.controllers', [])
   .controller('OrdersCtrl', function($scope, $stateParams) {
     $scope.orders = [
       {
-        title: 'Photoshop CS2',
+        title: 'Photoshop CS4',
         os: 'macOS',
-        version: 'CS2',
+        version: '11.0',
         date: 'Oct 15, 2005',
-        price: 200,
-        id:1
+        price: 231.76,
+        license: "Personal",
+        id: "cs4",
+        company:"Adobe"
+      },
+      {
+        title: 'Photoshop CS4',
+        os: 'macOS',
+        version: '11.0',
+        date: 'Oct 15, 2005',
+        price: 296.44,
+        license: "Commercial",
+        id: "cs4",
+        company:"Adobe"
       }
+,
+      {
+        title: 'Photoshop CS5',
+        os: 'macOS',
+        version: '12.1',
+        date: 'Oct 15, 2005',
+        price: 412.09,
+        license: "Personal",
+        id:"cs5",
+        company:"Adobe"
+      },
+
+
+      {
+        title: 'Photoshop CS6',
+        os: 'macOS',
+        version: '13.0',
+        date: 'Oct 15, 2005',
+        price: 656.23,
+        license: "Personal",
+        id:"cs6",
+        company:"Adobe"
+      }
+
     ];
 });
 
