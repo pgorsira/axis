@@ -330,7 +330,7 @@ angular.module('starter.controllers', [])
         version: '11.0',
         date: 'Oct 15, 2005',
         price: 231.76,
-        license: "Personal",
+        license: "2008",
         id: "cs4",
         company:"Adobe"
       },
@@ -340,7 +340,7 @@ angular.module('starter.controllers', [])
         version: '11.0',
         date: 'Oct 15, 2005',
         price: 296.44,
-        license: "Commercial",
+        license: "2008",
         id: "cs4",
         company:"Adobe"
       }
@@ -351,7 +351,7 @@ angular.module('starter.controllers', [])
         version: '12.1',
         date: 'Oct 15, 2005',
         price: 412.09,
-        license: "Personal",
+        license: "2010",
         id:"cs5",
         company:"Adobe"
       },
@@ -363,7 +363,7 @@ angular.module('starter.controllers', [])
         version: '13.0',
         date: 'Oct 15, 2005',
         price: 656.23,
-        license: "Personal",
+        license: "2012",
         id:"cs6",
         company:"Adobe"
       },
@@ -373,7 +373,7 @@ angular.module('starter.controllers', [])
         version: '13.0',
         date: 'Oct 15, 2005',
         price: 702.96,
-        license: "Commercial",
+        license: "2012",
         id:"cs6",
         company:"Adobe"
       }
