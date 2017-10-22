@@ -1,16 +1,34 @@
 <ion-view view-title="Browse">
   <ion-content>
 
-    <div style="margin-top:20px;">
+    <div style="">
     <!--div class="item item-image">
       <img src="cover.jpg">
     </div-->
+
+      <ks-swiper-container initial-slide="3" speed="2000" loop="true" show-nav-buttons="false" slides-per-view="1" space-between="0"
+                           pagination-clickable="false"     pagination-is-active="true"
+                           override-parameters="{effect: 'slide',coverflow: {rotate: 50,stretch: 0,depth: 100,modifier: 1,slideShadows : false}}"
+                           swiper="swiper" on-ready="onReadySwiper(swiper)">
+        <ks-swiper-slide class="">
+          <img ng-src="img/1.png" width="100%" >
+        </ks-swiper-slide>
+        <ks-swiper-slide class="">
+          <img ng-src="img/2.png" width="100%" >
+        </ks-swiper-slide>
+
+        <ks-swiper-slide class="">
+          <img ng-src="img/3.png" width="100%" >
+        </ks-swiper-slide>
+
+      </ks-swiper-container>
+
 
 
       <div><h3 style="margin-left:20px;display:inline;">Recommended</h3>
       </div>
 
-    <ion-scroll direction="x" class="wide-as-needed" scrollbar-x="false" style="padding-left:20px;    padding-top: 10px;">
+    <ion-scroll delegate-handle="horizontal" horizontal-scroll-fix="mainScroll" direction="x" class="wide-as-needed" scrollbar-x="false" style="padding-left:20px;    padding-top: 10px;">
       <div style=" padding-bottom: 20px">
       <div style="display:inline-block;margin-right:20px;width:90px;vertical-align: top;" ng-repeat="app in row1_apps" >
         <img ng-src="img/{{app.id}}.png" width="100%" style="border-radius: 10px;width:90px;margin-top:10px;margin-bottom: 5px;">
@@ -33,7 +51,7 @@
     border: none;
     height: 1px;">
 
-      <ion-scroll direction="x" class="wide-as-needed" scrollbar-x="false" style="padding-left:20px;    padding-top: 10px;">
+      <ion-scroll delegate-handle="horizontal" horizontal-scroll-fix="mainScroll" direction="x" class="wide-as-needed" scrollbar-x="false" style="padding-left:20px;    padding-top: 10px;">
 
       <div class="img grad-4" style="       display: inline-block;
     padding: 40px 30px;
@@ -41,10 +59,12 @@
     font-family: sans-serif;
     text-transform: uppercase;
     font-weight: bold;
-    border-radius: 10px;
+    border-radius: 10px;    vertical-align: top;
+
     letter-spacing: 3px;
-    font-size: 23pt;
-"><span>Finance</span></div>
+    font-size: 23pt;font-family: 'Contrail One', cursive;
+
+"><span>Finance Apps</span></div>
       <div class="img grad-5" style="       display: inline-block;
     padding: 40px 30px;
     color: white;
@@ -52,7 +72,11 @@
     text-transform: uppercase;
     font-weight: bold;
     border-radius: 10px;
-    letter-spacing: 3px;
+    letter-spacing: 3px;    vertical-align: top;
+
+    margin-left:15px;
+    font-family: 'Fascinate Inline', cursive;
+
     font-size: 23pt;
 "><span>Games</span></div>
       </ion-scroll>
@@ -68,7 +92,7 @@
       <div><h3 style="margin-left:20px;display:inline;">Trending</h3>
       </div>
 
-      <ion-scroll direction="x" class="wide-as-needed" scrollbar-x="false" style="padding-left:20px;    padding-top: 10px;">
+      <ion-scroll  delegate-handle="horizontal" horizontal-scroll-fix="mainScroll" direction="x" class="wide-as-needed" scrollbar-x="false" style="padding-left:20px;    padding-top: 10px;">
         <div style=" padding-bottom: 20px">
           <div style="display:inline-block;margin-right:20px;width:90px;vertical-align: top;" ng-repeat="app in row1_apps" >
             <img ng-src="img/{{app.id}}.png" width="100%" style="border-radius: 10px;width:90px;margin-top:10px;margin-bottom: 5px;">
@@ -91,10 +115,10 @@
     border: none;
     height: 1px;">
 
-      <div><h3 style="margin-left:20px;display:inline;">Trending</h3>
+      <div><h3 style="margin-left:20px;display:inline;">New Releases</h3>
       </div>
 
-      <ion-scroll direction="x" class="wide-as-needed" scrollbar-x="false" style="padding-left:20px;    padding-top: 10px;">
+      <ion-scroll delegate-handle="horizontal" horizontal-scroll-fix="mainScroll" direction="x" class="wide-as-needed" scrollbar-x="false" style="padding-left:20px;    padding-top: 10px;">
         <div style=" padding-bottom: 20px">
           <div style="display:inline-block;margin-right:20px;width:90px;vertical-align: top;" ng-repeat="app in row1_apps" >
             <img ng-src="img/{{app.id}}.png" width="100%" style="border-radius: 10px;width:90px;margin-top:10px;margin-bottom: 5px;">
