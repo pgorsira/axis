@@ -6,23 +6,24 @@
       <img src="cover.jpg">
     </div-->
 
+      <div style="margin-bottom: 20px">
+
       <ks-swiper-container initial-slide="3" speed="2000" loop="true" show-nav-buttons="false" slides-per-view="1" space-between="0"
-                           pagination-clickable="false"     pagination-is-active="true"
+                           pagination-clickable="false"     pagination-is-active="true"     autoplay="5000"
                            override-parameters="{effect: 'slide',coverflow: {rotate: 50,stretch: 0,depth: 100,modifier: 1,slideShadows : false}}"
                            swiper="swiper" on-ready="onReadySwiper(swiper)">
         <ks-swiper-slide class="">
-          <img ng-src="img/1.png" width="100%" >
+          <img ng-src="img/Avid-logo.jpg" width="100%" >
         </ks-swiper-slide>
         <ks-swiper-slide class="">
-          <img ng-src="img/2.png" width="100%" >
+          <img ng-src="img/Autodesk-logo-and-wordmark.png" width="100%" >
         </ks-swiper-slide>
-
         <ks-swiper-slide class="">
-          <img ng-src="img/3.png" width="100%" >
+          <img ng-src="img/Ableton.svg.png" width="100%" >
         </ks-swiper-slide>
 
       </ks-swiper-container>
-
+      </div>
 
 
       <div><h3 style="margin-left:20px;display:inline;">Recommended</h3>
@@ -94,7 +95,7 @@
 
       <ion-scroll  delegate-handle="horizontal3" horizontal-scroll-fix="mainScroll" direction="x" class="wide-as-needed" scrollbar-x="false" style="padding-left:20px;    padding-top: 10px;">
         <div style=" padding-bottom: 20px">
-          <div style="display:inline-block;margin-right:20px;width:90px;vertical-align: top;" ng-repeat="app in row1_apps" >
+          <div style="display:inline-block;margin-right:20px;width:90px;vertical-align: top;" ng-repeat="app in row2_apps" >
             <img ng-src="img/{{app.id}}.png" width="100%" style="border-radius: 10px;width:90px;margin-top:10px;margin-bottom: 5px;">
             <span style="display:block;
     width: 90px;
@@ -120,7 +121,7 @@
 
       <ion-scroll delegate-handle="horizontal4" horizontal-scroll-fix="mainScroll" direction="x" class="wide-as-needed" scrollbar-x="false" style="padding-left:20px;    padding-top: 10px;">
         <div style=" padding-bottom: 20px">
-          <div style="display:inline-block;margin-right:20px;width:90px;vertical-align: top;" ng-repeat="app in row1_apps" >
+          <div style="display:inline-block;margin-right:20px;width:90px;vertical-align: top;" ng-repeat="app in row3_apps" >
             <img ng-src="img/{{app.id}}.png" width="100%" style="border-radius: 10px;width:90px;margin-top:10px;margin-bottom: 5px;">
             <span style="display:block;
     width: 90px;
@@ -135,11 +136,6 @@
 
       </ion-scroll>
 
-      <hr style="     background-color: lightgray;
-    margin-left: 20px;
-    margin-bottom: 25px;
-    border: none;
-    height: 1px;">
 
     </div>
   </ion-content>

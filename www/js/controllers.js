@@ -208,16 +208,30 @@ angular.module('starter.controllers', [])
 
     $scope.row2_apps = [
       { title: 'Overwatch',
-        id: 1,
+        id: 6,
         platform:"macOS"
       },
-      { title: 'League of Legends', id: 2,
+      { title: 'League of Legends', id: 7,
         platform:"Windows 10"
       },
-      { title: 'Rocket League', id: 3,
+      { title: 'Rocket League', id: 8,
         platform:"macOS"
       },
     ];
+
+    $scope.row3_apps = [
+      { title: 'Overwatch',
+        id: 9,
+        platform:"macOS"
+      },
+      { title: 'League of Legends', id: 10,
+        platform:"Windows 10"
+      },
+      { title: 'Rocket League', id: 11,
+        platform:"macOS"
+      },
+    ];
+
 
   })
 
