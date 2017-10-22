@@ -12,7 +12,8 @@ angular.module('starter.controllers', [])
 })
 
 .controller('InstalledCtrl', function($scope) {
-  $scope.apps = [
+  console.log("InstalledCtrl");
+  $scope.installed_apps = [
     { title: 'Adobe Photoshop CS2', id: 1 },
     { title: 'Microsoft Office 2011', id: 2 },
     { title: 'Final Cut Pro', id: 3 },
@@ -20,10 +21,17 @@ angular.module('starter.controllers', [])
 })
 
   .controller('BrowseCtrl', function($scope) {
-    $scope.apps = [
-      { title: 'Adobe Photoshop CS2', id: 1 },
-      { title: 'Microsoft Office 2011', id: 2 },
-      { title: 'Final Cut Pro', id: 3 },
+    $scope.row1_apps = [
+      { title: 'Adobe Photoshop CS2',
+        id: 1,
+        platform:"macOS"
+      },
+      { title: 'Microsoft Office 2011', id: 2,
+        platform:"Windows 10"
+      },
+      { title: 'Final Cut Pro', id: 3,
+        platform:"macOS"
+      },
     ];
   })
 
