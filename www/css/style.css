@@ -17,3 +17,44 @@
   /*max-height:64px !important;*/
   /*max-width:64px !important;*/
 }
+
+   .grad-1 {
+     background: #ff5e3a; /* Old browsers */
+     background: linear-gradient(to bottom,  #ff5e3a 0%,#ff2a68 100%); /* W3C */
+   }
+.grad-2 {
+  background: #ff9500; /* Old browsers */
+  background: linear-gradient(to bottom,  #ff9500 0%,#ff5e3a 100%); /* W3C */
+}
+.grad-3 {
+  background: #ffdb4c; /* Old browsers */
+  background: linear-gradient(to bottom,  #ffdb4c 0%,#ffcd02 100%); /* W3C */
+}
+.grad-4 {
+  background: #87fc70; /* Old browsers */
+  background: linear-gradient(to bottom,  #87fc70 0%,#0bd318 100%); /* W3C */
+}
+.grad-5 {
+  background: #52edc7; /* Old browsers */
+  background: linear-gradient(to bottom,  #52edc7 0%,#5ac8fb 100%); /* W3C */
+}
+.grad-6 {
+  background: #1ad6fd; /* Old browsers */
+  background: linear-gradient(to bottom,  #1ad6fd 0%,#1d62f0 100%); /* W3C */
+}
+.grad-7 {
+  background: #c644fc; /* Old browsers */
+  background: linear-gradient(to bottom,  #c644fc 0%,#5856d6 100%); /* W3C */
+}
+.grad-8 {
+  background: #ef4db6; /* Old browsers */
+  background: linear-gradient(to bottom,  #ef4db6 0%,#c643fc 100%); /* W3C */
+}
+.grad-9 {
+  background: #4a4a4a; /* Old browsers */
+  background: linear-gradient(to bottom,  #4a4a4a 0%,#2b2b2b 100%); /* W3C */
+}
+.grad-0 {
+  background: #dbddde; /* Old browsers */
+  background: linear-gradient(to bottom,  #dbddde 0%,#898c90 100%); /* W3C */
+}
